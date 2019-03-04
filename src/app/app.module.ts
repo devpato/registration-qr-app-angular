@@ -9,6 +9,11 @@ import { QrPageComponent } from './qr-page/qr-page.component';
 import { CheckinPageComponent } from './checkin-page/checkin-page.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
+import {ButtonModule} from 'primeng/button';
+import {MatButtonModule} from '@angular/material/button';
+import { Routes, RouterModule } from '@angular/router';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +25,9 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ButtonModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
