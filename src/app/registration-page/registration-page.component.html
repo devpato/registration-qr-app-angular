@@ -1,20 +1,20 @@
 <div class="registration">
-  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" required>
     <div class="form">
       <mat-form-field>
-        <input matInput placeholder="Name"  formControlName="firstName">
+        <input matInput placeholder="First Name"  formControlName="firstName"required required minlength="3">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Last Name"  formControlName="lastName">
+        <input matInput placeholder="Last Name"  formControlName="lastName"  minlength="3">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="RACF" formControlName="racf" >
+        <input matInput placeholder="RACF" formControlName="racf" required  minlength="4">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Title" formControlName="title">
+        <input matInput placeholder="Title" formControlName="title" required  minlength="3">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Email" formControlName="email">
+        <input matInput placeholder="Email" formControlName="email" required type="email">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="Team" formControlName="team">
@@ -35,9 +35,9 @@
           </span>
           </mat-expansion-panel>
       </mat-accordion>
-      <mat-checkbox formControlName="acceptTerms">I accept terms and condition.</mat-checkbox>
+      <mat-checkbox formControlName="acceptTerms" required>I accept terms and condition.</mat-checkbox>
     </div>
-    <button type="submit" mat-raised-button color="accent" class="submit-buttom" >Submit</button>
+    <button type="submit" mat-raised-button color="accent" class="submit-buttom"  [disabled]="!registrationForm.valid">Submit</button>
   </form>
 </div>
 
