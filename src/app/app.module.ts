@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,7 +12,11 @@ import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 import {ButtonModule} from 'primeng/button';
 import {MatButtonModule} from '@angular/material/button';
-import { Routes, RouterModule } from '@angular/router';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatExpansionModule} from '@angular/material/expansion';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 @NgModule({
@@ -26,8 +31,14 @@ import { Routes, RouterModule } from '@angular/router';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     ButtonModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatExpansionModule,
+    MatCheckboxModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
