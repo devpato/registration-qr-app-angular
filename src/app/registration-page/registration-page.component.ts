@@ -17,20 +17,28 @@ export class RegistrationPageComponent implements OnInit {
       team: new FormControl(''),
       acceptTerms: new FormControl(''),
     });
+    elementType: 'url' | 'canvas' | 'img' = 'url';
+    value: Visitor;
+    qr = '';
   constructor() { }
 
   ngOnInit() {
   }
 
   onSubmit() {
-    let visitor: Visitor;
-    visitor = {
-      ...this.registrationForm.value,
-      qr: '',
-      checkin: ''
 
+    this.value = {
+      ...this.registrationForm.value,
+      checkin: false
     };
-    console.log(visitor);
+
+    this.value = {
+      ...this.value,
+      qr: JSON.stringify(this.value)
+    };
+
+    this.qr = this.value.qr;
+    console.log(this.value);
   }
 
 }
