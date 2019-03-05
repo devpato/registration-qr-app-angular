@@ -1,3 +1,10 @@
-<p>
-  qr-page works!
-</p>
+<div class="qr-container">
+  <div class="body">
+      <div class="title">
+          Please take a picture of this page. You will need the QR code for checking into the Hackathon.
+        </div>
+        <ngx-qrcode [qrc-element-type]="elementType" [qrc-value] = "QR" class="qr-code">
+        </ngx-qrcode>
+        <button mat-raised-button color="primary" (click)="goBack()">Go Back</button>
+  </div>
+</div>

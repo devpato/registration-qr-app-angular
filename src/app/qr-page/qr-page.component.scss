@@ -1,0 +1,22 @@
+.qr-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        text-align: center;
+        font-weight: 700;
+
+    }
+
+    .qr-code {
+        text-align: center;
+        margin: 72px 0;
+    }
+
+    button {
+        display: flex;
+        margin: auto;
+    }
+}
