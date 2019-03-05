@@ -1,8 +1,10 @@
 .qr-container {
     height: 100vh;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    flex-direction: column;
+    margin: 0 42px;
 
     .title {
         text-align: center;
@@ -10,13 +12,17 @@
 
     }
 
-    .qr-code {
-        text-align: center;
-        margin: 72px 0;
+    ::ng-deep {
+        .qr-code {
+            text-align: center;
+            img {
+                height: 300px;
+                width: 300px;
+            }
+        }
+    
     }
-
     button {
-        display: flex;
-        margin: auto;
+        width: 100%
     }
 }

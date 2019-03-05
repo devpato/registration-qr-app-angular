@@ -18,6 +18,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
+import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
     MatExpansionModule,
     MatCheckboxModule,
     ReactiveFormsModule,
-    NgxQRCodeModule
+    NgxQRCodeModule,
+    ZXingScannerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,16 @@
+.welcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin: 42px;
+    .title {
+        font-size: 42px;
+        font-weight: 700;
+    }
+
+    button {
+        width: 100%;
+    }
+}
