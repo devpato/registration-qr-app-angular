@@ -9,7 +9,9 @@
   
      <div class="qr-scan-area">
       <zxing-scanner #scanner start="true" [device]="currentDevice" (scanSuccess)="handleQrCodeResult($event)" [formats]="['QR_CODE', 'EAN_13', 'CODE_128', 'DATA_MATRIX']"></zxing-scanner>
-      <div class="qr-area"></div>
+      <div class="qr-area">
+        <div class="area"></div>
+      </div>
      </div>
     <section class="results" *ngIf="qrResultString">
       <small>Result</small>

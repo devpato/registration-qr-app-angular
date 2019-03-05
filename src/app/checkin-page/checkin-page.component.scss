@@ -9,13 +9,19 @@
     }
 
     .qr-area {
-      display: flex;
       position: absolute;
-      top: 25%;
-      height: 300px;
-      width: 300px;
-      border: 2px solid red;
-      margin: auto 42px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: calc(100vh - 50px);
+      top: 0;
+      width: 100%;
+      .area {
+        height: 300px;
+        width: 300px;
+        border: 2px solid red;
+      }
+     
     }
   }
 }
@@ -63,6 +69,17 @@
       display: block;
       font-size: 60%;
       margin: -.6em 0 0 0;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    ::ng-deep {
+      .qr-scan-area {
+        .qr-area {
+          
+
+        }
+      }
     }
   }
   
