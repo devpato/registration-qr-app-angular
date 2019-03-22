@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { RegistrationService } from '../services/registration.service';
 
 @Component({
   selector: 'app-home-page',
@@ -8,14 +9,21 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private _resgistrationService: RegistrationService) { }
 
   ngOnInit() {
+    this.getUsers();
   }
 
   nav(route: string) {
     console.log(route);
     this.router.navigate(['/', route]);
+  }
+
+  getUsers() {
+    this._resgistrationService.getUsers().subscribe(u => {
+      console.log(u['Items']);
+    });
   }
 
 }
