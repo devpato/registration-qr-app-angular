@@ -57,3 +57,4 @@ export class RegistrationPageComponent implements OnInit {
     this.router.navigate(['/qr']);
   }
 }
+
