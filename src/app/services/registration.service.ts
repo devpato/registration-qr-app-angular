@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpHeaders } from '@angular/common/http';
 import { Visitor } from '../models/visitor.model';
 
 @Injectable({
@@ -18,5 +19,9 @@ export class RegistrationService {
     params = params.append('racf', racf);
     return this.http.get<Visitor>(this.BASE_URL, {params});
 
+  }
+
+  addUser(user: Visitor) {
+    return this.http.post(this.BASE_URL + '/addUser/', user);
   }
 }

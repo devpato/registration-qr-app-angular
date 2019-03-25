@@ -2,10 +2,10 @@
   <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" required>
     <div class="form">
       <mat-form-field>
-        <input matInput placeholder="First Name"  formControlName="firstName"required required minlength="3">
+        <input matInput placeholder="First Name"  formControlName="firstname"required required minlength="3">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Last Name"  formControlName="lastName"  minlength="3">
+        <input matInput placeholder="Last Name"  formControlName="lastname"  minlength="3">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="RACF" formControlName="racf" required  minlength="4">
@@ -35,7 +35,7 @@
           </span>
           </mat-expansion-panel>
       </mat-accordion>
-      <mat-checkbox formControlName="acceptTerms" required>I accept terms and condition.</mat-checkbox>
+      <mat-checkbox formControlName="acceptedterms" required>I accept terms and condition.</mat-checkbox>
     </div>
     <button type="submit" mat-raised-button color="accent" class="submit-buttom"  [disabled]="!registrationForm.valid">Submit</button>
   </form>

@@ -8,5 +8,5 @@ export interface Visitor {
     acceptTerms: boolean;
     team: string;
     title: string;
-    timestamp: Date;
+    timestamp: string;
 }

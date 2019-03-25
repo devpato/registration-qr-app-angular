@@ -16,11 +16,11 @@ import {MatSnackBar} from '@angular/material';
 export class RegistrationPageComponent implements OnInit {
 
     registrationForm = this.fb.group({
-      firstName: ['asdf', Validators.compose([
+      firstname: ['asdf', Validators.compose([
         Validators.minLength(3),
         Validators.required
       ])],
-      lastName: ['asdf', Validators.compose([
+      lastname: ['asdf', Validators.compose([
         Validators.minLength(3),
         Validators.required
       ])],
@@ -38,7 +38,7 @@ export class RegistrationPageComponent implements OnInit {
         Validators.required,
       ])],
       team: ['asdf'],
-      acceptTerms: [ true, Validators.required],
+      acceptedterms: [ true, Validators.required],
     });
     value: Visitor;
     error: string;
@@ -58,8 +58,8 @@ export class RegistrationPageComponent implements OnInit {
   onSubmit() {
     this.value = {
       ...this.registrationForm.value,
-      checkin: false,
-      timestamp: new Date(),
+      checkedin: false,
+      timestamp: new Date().toDateString(),
     };
     this.resgistrationService.getUser(this.value.racf).subscribe(u => {
       if (Object.getOwnPropertyNames(u).length === 0) {
@@ -68,7 +68,9 @@ export class RegistrationPageComponent implements OnInit {
           qr: JSON.stringify(this.value)
         };
         this.qrService.setQR(this.value.qr);
-        this.router.navigate(['/qr']);
+        this.resgistrationService.addUser(this.value).subscribe(() => {
+          this.router.navigate(['/qr']);
+        });
       } else {
         this.error = 'User with the RACF: ' + this.value.racf + ' already exist.';
         this.registrationForm.patchValue({racf:  null});
