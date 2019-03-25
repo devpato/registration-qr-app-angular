@@ -5,6 +5,8 @@ import { QrService } from '../services/qr.service';
 import { Router } from '@angular/router';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
+import { RegistrationService } from '../services/registration.service';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-registration-page',
@@ -12,33 +14,43 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./registration-page.component.scss']
 })
 export class RegistrationPageComponent implements OnInit {
+
     registrationForm = this.fb.group({
-      firstName: ['', Validators.compose([
+      firstName: ['asdf', Validators.compose([
         Validators.minLength(3),
         Validators.required
       ])],
-      lastName: ['', Validators.compose([
+      lastName: ['asdf', Validators.compose([
         Validators.minLength(3),
         Validators.required
       ])],
-      racf: ['', Validators.compose([
+      racf: ['Y4072', Validators.compose([
         Validators.minLength(4),
         Validators.required,
         Validators.pattern('[a-zA-Z]{1}[0-9]{4}')
       ])],
-      title: ['', Validators.compose([
+      title: ['asdf', Validators.compose([
         Validators.minLength(3),
         Validators.required
       ])],
-      email: ['', Validators.compose([
+      email: ['asdf@k.com', Validators.compose([
         Validators.email,
         Validators.required,
       ])],
-      team: [''],
-      acceptTerms: ['', Validators.required],
+      team: ['asdf'],
+      acceptTerms: [ true, Validators.required],
     });
     value: Visitor;
-  constructor(private qrService: QrService, private router: Router, private fb: FormBuilder) { }
+    error: string;
+    durationInSeconds = 5;
+
+  constructor(
+    private qrService: QrService,
+    private router: Router,
+    private fb: FormBuilder,
+    private resgistrationService: RegistrationService,
+    private snackBar: MatSnackBar
+    ) { }
 
   ngOnInit() {
   }
@@ -46,15 +58,31 @@ export class RegistrationPageComponent implements OnInit {
   onSubmit() {
     this.value = {
       ...this.registrationForm.value,
-      checkin: false
+      checkin: false,
+      timestamp: new Date(),
     };
+    this.resgistrationService.getUser(this.value.racf).subscribe(u => {
+      if (Object.getOwnPropertyNames(u).length === 0) {
+        this.value = {
+          ...this.value,
+          qr: JSON.stringify(this.value)
+        };
+        this.qrService.setQR(this.value.qr);
+        this.router.navigate(['/qr']);
+      } else {
+        this.error = 'User with the RACF: ' + this.value.racf + ' already exist.';
+        this.registrationForm.patchValue({racf:  null});
+        this.openSnackBar(this.error, 'Dismiss');
+      }
+    });
+  }
 
-    this.value = {
-      ...this.value,
-      qr: JSON.stringify(this.value)
-    };
-    this.qrService.setQR(this.value.qr);
-    this.router.navigate(['/qr']);
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 5000,
+    });
   }
 }
+
+
 

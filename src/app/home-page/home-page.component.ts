@@ -9,21 +9,14 @@ import { RegistrationService } from '../services/registration.service';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private router: Router, private _resgistrationService: RegistrationService) { }
+  constructor(private router: Router, private resgistrationService: RegistrationService) { }
 
   ngOnInit() {
-    this.getUsers();
   }
 
   nav(route: string) {
     console.log(route);
     this.router.navigate(['/', route]);
-  }
-
-  getUsers() {
-    this._resgistrationService.getUsers().subscribe(u => {
-      console.log(u['Items']);
-    });
   }
 
 }

@@ -18,6 +18,7 @@ import {MatInputModule} from '@angular/material/input';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 
@@ -42,6 +43,7 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     MatCheckboxModule,
     ReactiveFormsModule,
     NgxQRCodeModule,
+    MatSnackBarModule,
     ZXingScannerModule,
     HttpClientModule
   ],
