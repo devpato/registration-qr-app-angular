@@ -2,6 +2,7 @@ import { Component, VERSION, OnInit, ViewChild } from '@angular/core';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { Result } from '@zxing/library';
 import { Router } from '@angular/router';
+import { RegistrationService } from '../services/registration.service';
 
 @Component({
   selector: 'app-checkin-page',
@@ -19,7 +20,7 @@ export class CheckinPageComponent implements OnInit {
   availableDevices: MediaDeviceInfo[];
   currentDevice: MediaDeviceInfo;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private resgistrationService: RegistrationService) {}
 
 
   ngOnInit() {
@@ -49,13 +50,22 @@ export class CheckinPageComponent implements OnInit {
   }
 
   handleQrCodeResult(resultString: string) {
-    console.log('Result: ', resultString);
     this.qrResultString = resultString;
-    this.router.navigate(['/welcome']);
+    const jsonBody = JSON.parse(resultString);
+    this.resgistrationService.updateUser( {racf: jsonBody.racf, checkedin: true}).subscribe(res => {
+      console.log('yay', res);
+      this.router.navigate(['/welcome']);
+    });
   }
 
   onDeviceSelectChange(selectedValue: string) {
-    console.log('Selection changed: ', selectedValue);
     this.currentDevice = this.scanner.getDeviceById(selectedValue);
   }
 }
+
+
+//Check if person exist on registration
+//Use finalize
+//check if response is successful after updating
+//Check if response is successful after getting item
+//Check if response is succesful after adding item

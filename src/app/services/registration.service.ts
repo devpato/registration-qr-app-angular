@@ -21,7 +21,11 @@ export class RegistrationService {
 
   }
 
-  addUser(user: Visitor) {
+  addUser(user: any) {
     return this.http.post(this.BASE_URL + '/addUser/', user);
+  }
+
+  updateUser(user: any) {
+    return this.http.put(this.BASE_URL + '/updateuser/', user);
   }
 }

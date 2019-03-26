@@ -11,8 +11,7 @@ export class HomePageComponent implements OnInit {
 
   constructor(private router: Router, private resgistrationService: RegistrationService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   nav(route: string) {
     console.log(route);
