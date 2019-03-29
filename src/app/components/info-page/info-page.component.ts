@@ -10,6 +10,7 @@ import { RegistrationService } from 'src/app/services/registration.service';
 export class InfoPageComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
   dataSource: MatTableDataSource<any>;
+  value = '';
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
