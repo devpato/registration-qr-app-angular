@@ -24,9 +24,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
-import { InfoPageComponent } from './components/info-page/info-page.component';
+import { InfoPageComponent, QRDialogComponent } from './components/info-page/info-page.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +38,10 @@ import { InfoPageComponent } from './components/info-page/info-page.component';
     QrPageComponent,
     CheckinPageComponent,
     WelcomePageComponent,
-    InfoPageComponent
+    InfoPageComponent,
+    QRDialogComponent
   ],
+  entryComponents: [QRDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -57,7 +61,9 @@ import { InfoPageComponent } from './components/info-page/info-page.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    FormsModule
+    MatProgressSpinnerModule,
+    FormsModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

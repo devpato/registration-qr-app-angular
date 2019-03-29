@@ -1,6 +1,7 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatSort} from '@angular/material';
 import { RegistrationService } from 'src/app/services/registration.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-info-page',
@@ -8,14 +9,14 @@ import { RegistrationService } from 'src/app/services/registration.service';
   styleUrls: ['./info-page.component.scss']
 })
 export class InfoPageComponent implements OnInit {
-  displayedColumns: string[] = ['id', 'name', 'progress', 'color'];
+  displayedColumns: string[] = ['racf', 'name', 'title', 'team', 'qr'];
   dataSource: MatTableDataSource<any>;
   value = '';
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private registrationService: RegistrationService) {
+  constructor(private registrationService: RegistrationService, public dialog: MatDialog) {
 
   }
 
@@ -39,4 +40,25 @@ export class InfoPageComponent implements OnInit {
       console.log(this.dataSource);
     });
   }
+
+  openDialog(user: any): void {
+    this.dialog.open(QRDialogComponent, {
+      width: 'auto',
+      data: {
+        racf: user.racf,
+        name: user.firstname + ' ' + user.lastname,
+        title: user.title,
+        team: user.team,
+        qr: user.qr
+      }
+    });
+  }
+}
+
+@Component({
+  selector: 'app-qr-dialog',
+  templateUrl: 'qr-dialog.html',
+})
+export class QRDialogComponent {
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
 }
