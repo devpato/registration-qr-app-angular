@@ -58,7 +58,10 @@ export class InfoPageComponent implements OnInit {
 @Component({
   selector: 'app-qr-dialog',
   templateUrl: 'qr-dialog.html',
+  styleUrls: ['./qr-dialog.scss']
 })
 export class QRDialogComponent {
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {}
+  elementType: 'url' | 'canvas' | 'img' = 'url';
+  QR = this.data.qr;
 }

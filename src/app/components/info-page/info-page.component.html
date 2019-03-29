@@ -5,7 +5,7 @@
     </div>
     <mat-form-field>
       <mat-icon matPrefix>search</mat-icon>
-      <input matInput type="text" placeholder="Search Hackers" [(ngModel)]="value">
+      <input matInput type="text" placeholder="Search Hackers" [(ngModel)]="value" (keyup)="applyFilter($event.target.value)">
       <mat-icon *ngIf="value" matSuffix (click)="value=''">close</mat-icon>
     </mat-form-field>
     <div class="mat-elevation-z4">

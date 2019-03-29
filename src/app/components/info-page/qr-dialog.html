@@ -1,20 +1,10 @@
-<h1 mat-dialog-title>Hacker's Info</h1>
-<div mat-dialog-content>
-    <ul>
-        <li>
-            <span>{{data.racf}}</span>
-        </li>
-        <li>
-            <span>{{data.name}}</span>
-        </li>
-        <li>
-            <span>{{data.title}}</span>
-        </li>
-        <li>
-            <span>{{data.team}}</span>
-        </li>
-        <li>
-            <span>{{data.qr}}</span>
-        </li>
-    </ul>
+<h1 mat-dialog-title class="title">Hacker's Info</h1>
+<div mat-dialog-content class="dialog-body">
+    <div class="dialog-info">
+        <span class=info>RACF: AAAA</span>
+        <span class=info>Name: {{data.name}}</span>
+        <span class=info>Title: {{data.title}}</span>
+        <span class=info>Team: {{data.team}}</span>
+    </div>
+    <ngx-qrcode [qrc-element-type]="elementType" [qrc-value] = "QR" class="qr-code"></ngx-qrcode>
 </div>
