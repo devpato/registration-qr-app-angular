@@ -21,6 +21,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
+import { InfoPageComponent } from './components/info-page/info-page.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ZXingScannerModule } from '@zxing/ngx-scanner';
     RegistrationPageComponent,
     QrPageComponent,
     CheckinPageComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    InfoPageComponent
   ],
   imports: [
     BrowserModule,
