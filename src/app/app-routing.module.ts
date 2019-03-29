@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { RegistrationPageComponent } from './registration-page/registration-page.component';
-import { CheckinPageComponent } from './checkin-page/checkin-page.component';
-import { QrPageComponent } from './qr-page/qr-page.component';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { CheckinPageComponent } from './components/checkin-page/checkin-page.component';
+import { QrPageComponent } from './components/qr-page/qr-page.component';
+import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
+import { InfoPageComponent } from './components/info-page/info-page.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'welcome',
     component: WelcomePageComponent
+  },
+  {
+    path: 'participants',
+    component: InfoPageComponent
   }
 ];
 

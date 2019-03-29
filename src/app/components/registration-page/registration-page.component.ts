@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { Visitor } from '../models/visitor.model';
-import { QrService } from '../services/qr.service';
+import { Visitor } from '../..//models/visitor.model';
+import { QrService } from '../../services/qr.service';
 import { Router } from '@angular/router';
 import { Validators } from '@angular/forms';
 import { FormBuilder } from '@angular/forms';
-import { RegistrationService } from '../services/registration.service';
+import { RegistrationService } from '../..//services/registration.service';
 import {MatSnackBar} from '@angular/material';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { QrService } from '../services/qr.service';
+import { QrService } from '../..//services/qr.service';
 import { Router } from '@angular/router';
 
 @Component({

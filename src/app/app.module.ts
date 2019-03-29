@@ -5,11 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { RegistrationPageComponent } from './registration-page/registration-page.component';
-import { QrPageComponent } from './qr-page/qr-page.component';
-import { CheckinPageComponent } from './checkin-page/checkin-page.component';
-import { WelcomePageComponent } from './welcome-page/welcome-page.component';
+import { HomePageComponent } from './components/home-page/home-page.component';
+import { RegistrationPageComponent } from './components/registration-page/registration-page.component';
+import { QrPageComponent } from './components/qr-page/qr-page.component';
+import { CheckinPageComponent } from './components/checkin-page/checkin-page.component';
+import { WelcomePageComponent } from './components//welcome-page/welcome-page.component';
 
 import {ButtonModule} from 'primeng/button';
 import {MatButtonModule} from '@angular/material/button';
@@ -19,6 +19,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { InfoPageComponent } from './components/info-page/info-page.component';
@@ -47,7 +49,9 @@ import { InfoPageComponent } from './components/info-page/info-page.component';
     NgxQRCodeModule,
     MatSnackBarModule,
     ZXingScannerModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

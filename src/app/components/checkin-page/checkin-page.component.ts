@@ -2,7 +2,7 @@ import { Component, VERSION, OnInit, ViewChild } from '@angular/core';
 import { ZXingScannerComponent } from '@zxing/ngx-scanner';
 import { Result } from '@zxing/library';
 import { Router } from '@angular/router';
-import { RegistrationService } from '../services/registration.service';
+import { RegistrationService } from '../../services/registration.service';
 
 @Component({
   selector: 'app-checkin-page',
@@ -62,10 +62,3 @@ export class CheckinPageComponent implements OnInit {
     this.currentDevice = this.scanner.getDeviceById(selectedValue);
   }
 }
-
-
-//Check if person exist on registration
-//Use finalize
-//check if response is successful after updating
-//Check if response is successful after getting item
-//Check if response is succesful after adding item
