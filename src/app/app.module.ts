@@ -35,10 +35,12 @@ import { InfoPageComponent, QRDialogComponent } from './components/info-page/inf
 import { HackActionsComponent } from './components/hack-actions/hack-actions.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-import { ContactComponent } from './components/contact/contact.component';
+
 import { TeamsComponent } from './components/teams/teams.component';
 import { SponsorsComponent } from './components/sponsors/sponsors.component';
+import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/header/header.component';
+
 
 @NgModule({
   declarations: [
@@ -52,9 +54,9 @@ import { HeaderComponent } from './components/header/header.component';
     QRDialogComponent,
     HackActionsComponent,
     NavbarComponent,
-    ContactComponent,
     TeamsComponent,
     SponsorsComponent,
+    AboutComponent,
     HeaderComponent
   ],
   entryComponents: [QRDialogComponent],
