@@ -6,6 +6,7 @@ import { CheckinPageComponent } from './components/checkin-page/checkin-page.com
 import { QrPageComponent } from './components/qr-page/qr-page.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { InfoPageComponent } from './components/info-page/info-page.component';
+import { HackActionsComponent } from './components/hack-actions/hack-actions.component';
 
 const routes: Routes = [
   {
@@ -31,7 +32,11 @@ const routes: Routes = [
   {
     path: 'participants',
     component: InfoPageComponent
-  }
+  },
+  {
+    path: 'actions',
+    component: HackActionsComponent
+  },
 ];
 
 @NgModule({

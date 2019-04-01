@@ -29,7 +29,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { InfoPageComponent, QRDialogComponent } from './components/info-page/info-page.component';
-import { HackActionsComponent } from './hack-actions/hack-actions.component';
+import { HackActionsComponent } from './components/hack-actions/hack-actions.component';
 
 @NgModule({
   declarations: [
