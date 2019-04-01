@@ -1,3 +1,25 @@
-<p>
-  navbar works!
-</p>
+<mat-toolbar color="">
+    <button mat-button routerLink="/">
+    <mat-icon>home</mat-icon> 
+    </button>
+    <span class="fill-remaining-space"></span>
+    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+        <button mat-button routerLink="/">About</button>
+        <button mat-button routerLink="/">Registration</button>
+        <button mat-button routerLink="/">About SX</button>
+        <button mat-button routerLink="/">Location</button>
+        <button mat-button routerLink="/">FAQ</button>
+        <button mat-button routerLink="/">Contact</button>
+    </div>
+    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+     <mat-icon>menu</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item routerLink="/">About</button>
+    <button mat-menu-item routerLink="/">Registration</button>
+    <button mat-menu-item routerLink="/">About SX</button>
+    <button mat-menu-item routerLink="/">Location</button>
+    <button mat-menu-item routerLink="/">FAQ</button>
+    <button mat-menu-item routerLink="/">Contact</button>
+</mat-menu>

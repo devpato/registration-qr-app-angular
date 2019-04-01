@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,8 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
@@ -34,6 +37,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { TeamsComponent } from './teams/teams.component';
+import { SponsorsComponent } from './sponsors/sponsors.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +54,9 @@ import { TeamsComponent } from './teams/teams.component';
     NavbarComponent,
     AboutComponent,
     ContactComponent,
-    TeamsComponent
+    TeamsComponent,
+    SponsorsComponent,
+    HeaderComponent
   ],
   entryComponents: [QRDialogComponent],
   imports: [
@@ -71,9 +78,12 @@ import { TeamsComponent } from './teams/teams.component';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatToolbarModule,
     MatProgressSpinnerModule,
     FormsModule,
-    MatDialogModule
+    MatDialogModule,
+    FlexLayoutModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
