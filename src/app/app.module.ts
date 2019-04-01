@@ -33,12 +33,12 @@ import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { ZXingScannerModule } from '@zxing/ngx-scanner';
 import { InfoPageComponent, QRDialogComponent } from './components/info-page/info-page.component';
 import { HackActionsComponent } from './components/hack-actions/hack-actions.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { AboutComponent } from './about/about.component';
-import { ContactComponent } from './contact/contact.component';
-import { TeamsComponent } from './teams/teams.component';
-import { SponsorsComponent } from './sponsors/sponsors.component';
-import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
+
+import { ContactComponent } from './components/contact/contact.component';
+import { TeamsComponent } from './components/teams/teams.component';
+import { SponsorsComponent } from './components/sponsors/sponsors.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +52,6 @@ import { HeaderComponent } from './header/header.component';
     QRDialogComponent,
     HackActionsComponent,
     NavbarComponent,
-    AboutComponent,
     ContactComponent,
     TeamsComponent,
     SponsorsComponent,
