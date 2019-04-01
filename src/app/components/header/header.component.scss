@@ -1,0 +1,39 @@
+.header {
+    .container {
+        height: 100vh;
+        background: linear-gradient(to bottom, #2f6bbd 0%,#009cea 100%);
+        color: #fff;
+        display: flex;
+        .left-side {
+            width: 70%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .title {
+                text-align: center;
+                font-size: 72px;
+            }
+    
+            .subtitle {
+                text-align: center;
+                font-size: 42px;
+            }
+        }
+        .right-side {
+            color: #000;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .registration-wrapper {
+                height: auto;
+                padding: 16px;
+                background-color: #fff;
+                border-radius: 5px
+            }
+        }
+       
+    }
+}
