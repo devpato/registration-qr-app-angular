@@ -1,0 +1,45 @@
+.about {
+    height: 500px;
+    .container {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .title {
+            display: inline-block;
+            font-size: 42px;
+            text-align: center;
+            border-bottom: 2px solid #FFC939;
+        }
+
+        .body {
+            margin: 32px 0;
+            display: flex;
+            .left-side, .right-side {
+                text-align: justify;
+                width: 50%;
+                padding: 16px 0;
+                .event-info {
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 16px 0;
+                    .day {
+                       font-weight: bold;
+                       padding: 8px;
+                       border-bottom: 1px solid #FFC939;
+                    }
+                    ul {
+                        list-style-type: none;
+                        padding: 0;
+                    }
+                }
+               
+            }
+
+            .right-side {
+                padding-left: 32px;
+            }
+        }
+    }
+}
