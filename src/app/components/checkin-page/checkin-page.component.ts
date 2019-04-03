@@ -57,10 +57,13 @@ export class CheckinPageComponent implements OnInit {
     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
 
       const jsonBody = JSON.parse(resultString);
+      console.log(jsonBody.racf);
       if (jsonBody.hasOwnProperty('firstname')) {
-        this.qrResultString = 'Verified';
-        this.resgistrationService.updateUser( {racf: jsonBody.racf, checkedin: true}).subscribe(res => {
-        this.router.navigate(['/welcome']);
+        this.resgistrationService.updateUser( {racf: jsonBody.racf, checkedin: true}).subscribe(_ => {
+          this.qrResultString = 'Verified';
+          this.router.navigate(['/welcome']);
+        }, _ => {
+          this.qrResultString = 'Not a valid QR Code: ';
         });
       }
     } else {
