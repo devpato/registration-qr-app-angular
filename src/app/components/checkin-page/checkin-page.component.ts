@@ -36,13 +36,13 @@ export class CheckinPageComponent implements OnInit {
     this.scanner.camerasFound.subscribe((devices: MediaDeviceInfo[]) => {
       this.hasDevices = true;
       this.availableDevices = devices;
-      // for (const device of devices) {
-      //     if (/back|rear|environment/gi.test(device.label)) {
-      //         this.scanner.changeDevice(device);
-      //         this.currentDevice = device;
-      //         break;
-      //     }
-      // }
+      for (const device of devices) {
+          if (/back|rear|environment/gi.test(device.label)) {
+              this.scanner.changeDevice(device);
+              this.currentDevice = device;
+              break;
+          }
+      }
     });
   }
 
@@ -51,13 +51,10 @@ export class CheckinPageComponent implements OnInit {
   }
 
   handleQrCodeResult(resultString: string) {
-
     if (/^[\],:{}\s]*$/.test(resultString.replace(/\\["\\\/bfnrtu]/g, '@').
     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
-
       const jsonBody = JSON.parse(resultString);
-      console.log(jsonBody.racf);
       if (jsonBody.hasOwnProperty('firstname')) {
         this.resgistrationService.updateUser( {racf: jsonBody.racf, checkedin: true}).subscribe(_ => {
           this.qrResultString = 'Verified';
