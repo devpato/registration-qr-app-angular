@@ -24,12 +24,18 @@ export class CheckinPageComponent implements OnInit {
 
 
   ngOnInit() {
+    this.selectCamera();
+    this.scanner.camerasNotFound.subscribe(() => this.hasDevices = false);
+    this.scanner.scanComplete.subscribe((result: Result) => {
+      this.qrResult = result;
+    });
+    this.scanner.permissionResponse.subscribe((perm: boolean) => this.hasPermission = perm);
+  }
 
+  selectCamera() {
     this.scanner.camerasFound.subscribe((devices: MediaDeviceInfo[]) => {
       this.hasDevices = true;
       this.availableDevices = devices;
-
-      // selects the devices's back camera by default
       // for (const device of devices) {
       //     if (/back|rear|environment/gi.test(device.label)) {
       //         this.scanner.changeDevice(device);
@@ -38,24 +44,28 @@ export class CheckinPageComponent implements OnInit {
       //     }
       // }
     });
-
-    this.scanner.camerasNotFound.subscribe(() => this.hasDevices = false);
-    this.scanner.scanComplete.subscribe((result: Result) => this.qrResult = result);
-    this.scanner.permissionResponse.subscribe((perm: boolean) => this.hasPermission = perm);
   }
 
   displayCameras(cameras: MediaDeviceInfo[]) {
-    console.log('Devices: ', cameras);
     this.availableDevices = cameras;
   }
 
   handleQrCodeResult(resultString: string) {
-    this.qrResultString = resultString;
-    const jsonBody = JSON.parse(resultString);
-    this.resgistrationService.updateUser( {racf: jsonBody.racf, checkedin: true}).subscribe(res => {
-      console.log('yay', res);
-      this.router.navigate(['/welcome']);
-    });
+
+    if (/^[\],:{}\s]*$/.test(resultString.replace(/\\["\\\/bfnrtu]/g, '@').
+    replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
+    replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
+
+      const jsonBody = JSON.parse(resultString);
+      if (jsonBody.hasOwnProperty('firstname')) {
+        this.qrResultString = 'Verified';
+        this.resgistrationService.updateUser( {racf: jsonBody.racf, checkedin: true}).subscribe(res => {
+        this.router.navigate(['/welcome']);
+        });
+      }
+    } else {
+      this.qrResultString = 'Not a valid QR Code. ';
+    }
   }
 
   onDeviceSelectChange(selectedValue: string) {

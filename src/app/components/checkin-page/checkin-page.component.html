@@ -13,7 +13,7 @@
         <div class="area"></div>
       </div>
      </div>
-    <section class="results" *ngIf="qrResultString">
+    <section *ngIf="qrResultString" class="results {{qrResultString === 'Verified' ?  'valid' : 'invalid'}}">
       <small>Result</small>
       <strong>{{ qrResultString }}</strong>
     </section>

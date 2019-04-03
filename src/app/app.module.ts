@@ -40,6 +40,7 @@ import { TeamsComponent } from './components/teams/teams.component';
 import { SponsorsComponent } from './components/sponsors/sponsors.component';
 import { AboutComponent } from './components/about/about.component';
 import { HeaderComponent } from './components/header/header.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -57,7 +58,8 @@ import { HeaderComponent } from './components/header/header.component';
     TeamsComponent,
     SponsorsComponent,
     AboutComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContactComponent
   ],
   entryComponents: [QRDialogComponent],
   imports: [
