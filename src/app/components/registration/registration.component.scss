@@ -1,0 +1,19 @@
+.registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ::ng-deep {
+        mat-expansion-panel, mat-form-field {
+            max-width: 300px;
+            display: block;
+        }
+
+        mat-checkbox {
+            margin: 16px 0 !important;
+        }
+        .submit-buttom {
+            margin: 16px 0;
+            width: 100%;
+        }   
+    }
+}
