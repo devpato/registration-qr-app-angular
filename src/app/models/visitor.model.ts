@@ -4,7 +4,7 @@ export interface Visitor {
     racf: string;
     email: string;
     qr: string;
-    checkIn: boolean;
+    checkedin: boolean;
     acceptTerms: boolean;
     team: string;
     title: string;

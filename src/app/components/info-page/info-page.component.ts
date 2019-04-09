@@ -34,7 +34,7 @@ export class InfoPageComponent implements OnInit {
 
   getParticipants() {
     this.registrationService.getUsers().subscribe(u => {
-      this.dataSource =  new MatTableDataSource(u.Items);
+      this.dataSource =  new MatTableDataSource(u['Items']);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
       console.log(this.dataSource);
