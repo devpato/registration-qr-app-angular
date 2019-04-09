@@ -12,15 +12,15 @@ export class QrPageComponent implements OnInit {
   QR: string;
   constructor(private qrService: QrService, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getQRdata();
   }
 
-  goBack() {
+  goBack(): void  {
     this.router.navigate(['/']);
   }
 
-  getQRdata() {
+  getQRdata(): void {
     this.qrService.getQR().subscribe(qr => {
       this.QR = qr;
     });

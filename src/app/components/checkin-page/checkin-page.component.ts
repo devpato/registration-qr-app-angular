@@ -23,7 +23,7 @@ export class CheckinPageComponent implements OnInit {
   constructor(private router: Router, private resgistrationService: RegistrationService) {}
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.selectCamera();
     this.scanner.camerasNotFound.subscribe(() => this.hasDevices = false);
     this.scanner.scanComplete.subscribe((result: Result) => {
@@ -32,7 +32,7 @@ export class CheckinPageComponent implements OnInit {
     this.scanner.permissionResponse.subscribe((perm: boolean) => this.hasPermission = perm);
   }
 
-  selectCamera() {
+  selectCamera(): void {
     this.scanner.camerasFound.subscribe((devices: MediaDeviceInfo[]) => {
       this.hasDevices = true;
       this.availableDevices = devices;
@@ -46,11 +46,11 @@ export class CheckinPageComponent implements OnInit {
     });
   }
 
-  displayCameras(cameras: MediaDeviceInfo[]) {
+  displayCameras(cameras: MediaDeviceInfo[]): void {
     this.availableDevices = cameras;
   }
 
-  handleQrCodeResult(resultString: string) {
+  handleQrCodeResult(resultString: string): void {
     if (/^[\],:{}\s]*$/.test(resultString.replace(/\\["\\\/bfnrtu]/g, '@').
     replace(/"[^"\\\n\r]*"|true|false|null|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?/g, ']').
     replace(/(?:^|:|,)(?:\s*\[)+/g, ''))) {
@@ -68,7 +68,7 @@ export class CheckinPageComponent implements OnInit {
     }
   }
 
-  onDeviceSelectChange(selectedValue: string) {
+  onDeviceSelectChange(selectedValue: string): void {
     this.currentDevice = this.scanner.getDeviceById(selectedValue);
   }
 }

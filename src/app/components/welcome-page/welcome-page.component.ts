@@ -10,11 +10,11 @@ export class WelcomePageComponent implements OnInit {
 
   constructor(private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.takeMeBack();
   }
 
-  takeMeBack() {
+  takeMeBack(): void {
     setTimeout(() => {
       this.router.navigate(['/']);
     }, 3000);

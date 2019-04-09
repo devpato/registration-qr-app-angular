@@ -42,6 +42,8 @@ export class RegistrationComponent implements OnInit {
   value: Visitor;
   error: string;
   durationInSeconds = 5;
+  flag = false;
+
   constructor(
     private qrService: QrService,
     private router: Router,
@@ -50,10 +52,11 @@ export class RegistrationComponent implements OnInit {
     private snackBar: MatSnackBar
   ) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
-  onSubmit() {
+  onSubmit(): void {
+    this.flag = true;
     this.value = {
       ...this.registrationForm.value,
       checkedin: false,
@@ -66,21 +69,35 @@ export class RegistrationComponent implements OnInit {
           qr: JSON.stringify(this.value)
         };
         this.qrService.setQR(this.value.qr);
-        this.resgistrationService.addUser(this.value).subscribe(() => {
+        this.resgistrationService.addUser(this.value).subscribe(_ => {
+          this.flag = false;
           this.router.navigate(['/qr']);
+        }, err => {
+          this.errorMessage(err.message);
         });
       } else {
-        this.error = 'User with the RACF: ' + this.value.racf + ' already exist.';
-        this.registrationForm.patchValue({racf:  null});
-        this.openSnackBar(this.error, 'Dismiss');
+        this.errorMessage('');
       }
+    }, err => {
+      this.errorMessage(err.message);
     });
   }
 
-  openSnackBar(message: string, action: string) {
+  openSnackBar(message: string, action: string): void {
     this.snackBar.open(message, action, {
       duration: 5000,
     });
+  }
+
+  errorMessage(msg: string): void {
+    this.flag = false;
+    if (msg === '') {
+      this.error = 'User with the RACF: ' + this.value.racf + ' already exist.';
+    } else  {
+      this.error = msg;
+    }
+    this.registrationForm.patchValue({racf:  null});
+    this.openSnackBar(this.error, 'Dismiss');
   }
 
 }

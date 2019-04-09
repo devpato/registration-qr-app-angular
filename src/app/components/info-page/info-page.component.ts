@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatSort} from '@angular/material';
 import { RegistrationService } from 'src/app/services/registration.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { Visitor } from 'src/app/models/visitor.model';
 
 @Component({
   selector: 'app-info-page',
@@ -20,11 +21,11 @@ export class InfoPageComponent implements OnInit {
 
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getParticipants();
   }
 
-  applyFilter(filterValue: string) {
+  applyFilter(filterValue: string): void {
     this.dataSource.filter = filterValue.trim().toLowerCase();
 
     if (this.dataSource.paginator) {
@@ -32,16 +33,15 @@ export class InfoPageComponent implements OnInit {
     }
   }
 
-  getParticipants() {
+  getParticipants(): void {
     this.registrationService.getUsers().subscribe(u => {
       this.dataSource =  new MatTableDataSource(u['Items']);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
-      console.log(this.dataSource);
     });
   }
 
-  openDialog(user: any): void {
+  openDialog(user: Visitor): void {
     this.dialog.open(QRDialogComponent, {
       width: 'auto',
       data: {

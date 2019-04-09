@@ -1,6 +1,6 @@
 export interface Visitor {
-    name: string;
-    lastName: string;
+    firstname: string;
+    lastname: string;
     racf: string;
     email: string;
     qr: string;
