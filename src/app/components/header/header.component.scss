@@ -93,4 +93,29 @@
         transform: translateY(20px)
     }
 }
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+   
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    .header {
+        .container {
+            display: block;
+
+            .left-side {
+                width: 100%;
+                .title {
+                    text-align: center;
+                    font-size: 36px;
+                }
+            }
+            .right-side {
+                width: 100%;
+            }
+        }
+    }
+}
   

@@ -2,12 +2,13 @@
     <span class="fill-remaining-space"></span>
     <div fxLayout="row" fxShow="false" fxShow.gt-sm>
         <button mat-button routerLink="/">Home</button>
-        <button mat-button routerLink="/">About</button>
-        <button mat-button routerLink="/">Registration</button>
-        <button mat-button routerLink="/">About CSX</button>
+        <!-- <button mat-button routerLink="/">About</button> -->
+        <button mat-button routerLink="/registration">Registration</button>
+        <button mat-button routerLink="/checkin">Check In</button>
+        <!-- <button mat-button routerLink="/">About CSX</button>
         <button mat-button routerLink="/">Location</button>
         <button mat-button routerLink="/">FAQ</button>
-        <button mat-button routerLink="/">Contact</button>
+        <button mat-button routerLink="/">Contact</button> -->
     </div>
     <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
      <mat-icon>menu</mat-icon>
@@ -15,10 +16,11 @@
 </mat-toolbar>
 <mat-menu x-position="before" #menu="matMenu">
     <button mat-button routerLink="/">Home</button>
-    <button mat-menu-item routerLink="/">About</button>
-    <button mat-menu-item routerLink="/">Registration</button>
-    <button mat-menu-item routerLink="/">About CSX</button>
+    <!-- <button mat-menu-item routerLink="/">About</button> -->
+    <button mat-menu-item routerLink="/registration">Registration</button>
+    <button mat-button routerLink="/checkin">Check In</button>
+    <!-- <button mat-menu-item routerLink="/">About CSX</button>
     <button mat-menu-item routerLink="/">Location</button>
     <button mat-menu-item routerLink="/">FAQ</button>
-    <button mat-menu-item routerLink="/">Contact</button>
+    <button mat-menu-item routerLink="/">Contact</button> -->
 </mat-menu>
