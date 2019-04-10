@@ -41,37 +41,18 @@
                 background-color: #fff;
                 border-radius: 5px
             }
+        }  
+        
+        .mouse {
+            display: none;
         }
-
-        .mouse{
-            position: absolute;
-            width: 22px;
-            height: 42px;
-            bottom: 40px;
-            left: 50%;
-            margin-left: -12px;
-            border-radius: 15px;
-            border: 2px solid #fff;
-            animation: intro 1s;
-        }
-
-
-        .scroll {
-            display: block;
-            width: 3px;
-            height: 3px;
-            margin: 6px auto;
-            border-radius: 4px;
-            background: #fff;
-            animation: finger 1s infinite;
-        }      
     }
 }
 
 		
 @keyframes intro {
     0% {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(40px)
     }
   
@@ -89,22 +70,42 @@
     }
 
     100% {
-        opacity: 0;
+        opacity: 1;
         transform: translateY(20px)
     }
 }
 
-/* On screens that are 992px or less, set the background color to blue */
-@media screen and (max-width: 992px) {
-   
-}
 
-/* On screens that are 600px or less, set the background color to olive */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 992px) {
+    .header .container {
+
+        .mouse {
+            display: block;
+            position: absolute;
+            width: 22px;
+            height: 42px;
+            bottom: 40px;
+            left: 50%;
+            margin-left: -12px;
+            border-radius: 15px;
+            border: 2px solid #fff;
+            animation: intro 1s;
+        }
+
+        .scroll {
+            display: block;
+            width: 3px;
+            height: 3px;
+            margin: 6px auto;
+            border-radius: 4px;
+            background: #fff;
+            animation: finger 1s infinite;
+        }  
+    }
+
     .header {
         .container {
             display: block;
-
             .left-side {
                 width: 100%;
                 .title {
@@ -118,4 +119,18 @@
         }
     }
 }
-  
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (min-width: 1024px) {
+    .header {
+        .container {
+            .right-side {
+                justify-content: normal;
+                margin-top: 40px;
+                .registration-wrapper {
+                    padding: 28px;
+                }
+            }
+        }
+    }
+}
