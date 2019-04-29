@@ -9,11 +9,20 @@
         }
 
         mat-checkbox {
-            margin: 16px 0 !important;
+            margin: 16px 0;
         }
         .submit-buttom {
             margin: 16px 0;
             width: 100%;
         }   
+    }
+
+    .terms-conditions {
+        display: flex;
+        flex-direction: column;
+
+        a {
+            color: #2f6bbd;
+        }
     }
 }

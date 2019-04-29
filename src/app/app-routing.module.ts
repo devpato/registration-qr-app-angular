@@ -7,6 +7,7 @@ import { QrPageComponent } from './components/qr-page/qr-page.component';
 import { WelcomePageComponent } from './components/welcome-page/welcome-page.component';
 import { InfoPageComponent } from './components/info-page/info-page.component';
 import { HackActionsComponent } from './components/hack-actions/hack-actions.component';
+import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
     path: 'actions',
     component: HackActionsComponent
   },
+  {
+    path: 'terms&conditions',
+    component: TermsConditionsComponent
+  }
 ];
 
 @NgModule({
