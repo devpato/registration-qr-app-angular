@@ -1,6 +1,6 @@
 .contact-page {
 	width: 100%;
-	height: 500px;
+	padding: 42px 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -33,6 +33,20 @@
 				margin-bottom: 16px;
 				-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.56);
 				box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.56);
+			}
+		}
+	}
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+	.contact-page {
+		.contacts {
+			flex-direction: column;
+			align-items: center;
+
+			.contact {
+				margin-top: 16px;
 			}
 		}
 	}
