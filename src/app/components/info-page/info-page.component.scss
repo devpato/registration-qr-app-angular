@@ -1,59 +1,60 @@
 .info-page {
-    background: linear-gradient(to bottom, #2f6bbd 0%,#009cea 100%);
-    height: 100vh;
-    
-    .container {
-        margin: 0 16px;
-        padding: 42px 0;
-        .title {
-            font-size: 42px;
-            text-align: center;
-            color: #fff;
-        }
+	background: linear-gradient(to bottom, #2f6bbd 0%, #009cea 100%);
+	height: 100vh;
 
-        input {
-            padding-bottom: 4px;
-        }
+	.container {
+		margin: 42px 16px;
+		padding: 42px 0;
+		.title {
+			font-size: 42px;
+			text-align: center;
+			color: #fff;
+		}
 
-        ::ng-deep {
-            mat-icon, input {
-                color: white;
-            }    
-            .mat-form-field {
-                font-size: 14px;
-                width: 25%;
-                mat-icon {
-                    cursor: pointer;
-                }
+		input {
+			padding-bottom: 4px;
+		}
 
-                input {
-                    caret-color: #FFC939;
-                }
-            }
-            .mat-form-field-label {
-                color: #fff;
-            }
-            .mat-form-field-appearance-legacy .mat-form-field-underline {
-                background-color: #fff;
-            }
+		::ng-deep {
+			mat-icon,
+			input {
+				color: white;
+			}
+			.mat-form-field {
+				font-size: 14px;
+				width: 25%;
+				mat-icon {
+					cursor: pointer;
+				}
 
-            .mat-form-field-ripple{ 
-                background-color: #FFC939;
-            }
+				input {
+					caret-color: #ffc939;
+				}
+			}
+			.mat-form-field-label {
+				color: #fff;
+			}
+			.mat-form-field-appearance-legacy .mat-form-field-underline {
+				background-color: #fff;
+			}
 
-            .view-card {
-                text-decoration: underline;
-                cursor: pointer;
-            }
-            
-        }
+			.mat-form-field-ripple {
+				background-color: #ffc939;
+			}
 
-        table {
-            width: 100%;
-        }
-        
-        td, th {
-            width: 25%;
-        }
-    }
+			.view-card {
+				text-decoration: underline;
+				cursor: pointer;
+			}
+		}
+
+		table {
+			width: 100%;
+		}
+
+		td,
+		th {
+			width: 25%;
+		}
+	}
 }

@@ -1,18 +1,20 @@
-<mat-toolbar color="">
-    <span class="fill-remaining-space"></span>
-    <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+<div class="navbar">
+    <mat-toolbar color="">
+        <span class="fill-remaining-space"></span>
+        <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+            <button mat-button routerLink="/">Home</button>
+            <button mat-button routerLink="/registration">Registration</button>
+            <button mat-button routerLink="/checkin">Check In</button>
+            <button mat-button routerLink="/participants">Teams</button>
+        </div>
+        <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
+            <mat-icon>menu</mat-icon>
+        </button>
+    </mat-toolbar>
+    <mat-menu x-position="before" #menu="matMenu">
         <button mat-button routerLink="/">Home</button>
-        <button mat-button routerLink="/registration">Registration</button>
+        <button mat-menu-item routerLink="/registration">Registration</button>
         <button mat-button routerLink="/checkin">Check In</button>
-        <button mat-button routerLink="/participants">Teams</button>
-    </div>
-    <button mat-button [mat-menu-trigger-for]="menu" fxHide="false" fxHide.gt-sm>
-     <mat-icon>menu</mat-icon>
-    </button>
-</mat-toolbar>
-<mat-menu x-position="before" #menu="matMenu">
-    <button mat-button routerLink="/">Home</button>
-    <button mat-menu-item routerLink="/registration">Registration</button>
-    <button mat-button routerLink="/checkin">Check In</button>
-    <button mat-menu-item routerLink="/participants">Teams</button>
-</mat-menu>
+        <button mat-menu-item routerLink="/participants">Teams</button>
+    </mat-menu>
+</div>
