@@ -23,6 +23,11 @@
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
 	.about {
-		height: 80vh;
+		height: auto;
+		.container {
+			.body {
+				width: 100%;
+			}
+		}
 	}
 }

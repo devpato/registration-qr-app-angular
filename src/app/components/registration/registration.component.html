@@ -5,7 +5,7 @@
         <input matInput placeholder="First Name"  formControlName="firstname"required required minlength="3">
       </mat-form-field>
       <mat-form-field>
-        <input matInput placeholder="Last Name"  formControlName="lastname"  minlength="3">
+        <input matInput placeholder="Last Name"  formControlName="lastname"  required minlength="3">
       </mat-form-field>
       <mat-form-field>
         <input matInput placeholder="RACF" formControlName="racf" required  minlength="4">
@@ -20,10 +20,11 @@
         <input matInput placeholder="Team" formControlName="team">
       </mat-form-field>
       <div class="terms-conditions">
-          <span>Click <a [routerLink]="['/terms&conditions']" routerLinkActive="router-link-active" >here</a> to view terms and conditions.</span>
-          <mat-checkbox formControlName="acceptedterms" required>I accept terms and condition.</mat-checkbox>
+          <span>Click <a routerLink="/terms&conditions"  target="_blank" routerLinkActive="router-link-active" >here</a> to view the agreement.</span>
+          <mat-checkbox formControlName="acceptedterms" required>I accept the confidentiality agreement.</mat-checkbox>
       </div>
     </div>
+    <span class="only">*Event for CSX Employees only.</span>
     <button type="submit" mat-raised-button color="accent" class="submit-buttom"  [disabled]="!registrationForm.valid">Register</button>
   </form>
 </div>
