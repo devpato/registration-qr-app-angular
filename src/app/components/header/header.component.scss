@@ -1,3 +1,26 @@
+@keyframes intro {
+	0% {
+		opacity: 1;
+		transform: translateY(40px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes finger {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(20px);
+	}
+}
+
 .header {
 	.container {
 		height: 100vh;
@@ -75,31 +98,9 @@
 	}
 }
 
-@keyframes intro {
-	0% {
-		opacity: 1;
-		transform: translateY(40px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-@keyframes finger {
-	0% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(20px);
-	}
-}
-
 @media screen and (max-width: 992px) {
 	.header .container {
+		height: 100%;
 		.mouse {
 			display: block;
 			position: absolute;
@@ -129,6 +130,7 @@
 			display: block;
 			.left-side {
 				width: 100%;
+				height: 100vh;
 				.title {
 					text-align: center;
 					font-size: 36px;
@@ -150,6 +152,7 @@
 				margin-top: 40px;
 				.registration-wrapper {
 					padding: 16px;
+					margin-bottom: 42px;
 				}
 			}
 		}
