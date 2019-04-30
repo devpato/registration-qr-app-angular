@@ -43,6 +43,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { TermsConditionsComponent } from './terms-conditions/terms-conditions.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { TermsConditionsComponent } from './terms-conditions/terms-conditions.co
     HeaderComponent,
     ContactComponent,
     RegistrationComponent,
-    TermsConditionsComponent
+    TermsConditionsComponent,
+    TimelineComponent
   ],
   entryComponents: [QRDialogComponent],
   imports: [
