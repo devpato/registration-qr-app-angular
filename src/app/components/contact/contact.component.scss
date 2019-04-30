@@ -19,17 +19,21 @@
 		width: 100%;
 		display: flex;
 		justify-content: space-evenly;
-		text-align: center;
 		color: white;
-
-		.img-circle {
-			height: 200px;
-			width: 200px;
-			border: 1px solid #000;
-			border-radius: 50%;
-			margin-bottom: 16px;
-			-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.56);
-			box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.56);
+		.contact {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			.img-circle {
+				height: 200px;
+				width: 200px;
+				border: 1px solid #000;
+				border-radius: 50%;
+				margin-bottom: 16px;
+				-webkit-box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.56);
+				box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.56);
+			}
 		}
 	}
 }
