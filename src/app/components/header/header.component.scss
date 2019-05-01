@@ -35,8 +35,8 @@
 			justify-content: center;
 			align-items: center;
 			.train {
-				height: 100px;
-				width: 100px;
+				height: 500px;
+				width: 500px;
 			}
 			.title {
 				text-align: center;
@@ -147,6 +147,12 @@
 @media screen and (max-width: 1024px) {
 	.header {
 		.container {
+			.left-side {
+				.train {
+					height: 200px;
+					width: 200px;
+				}
+			}
 			.right-side {
 				justify-content: normal;
 				margin-top: 40px;
