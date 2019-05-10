@@ -19,7 +19,7 @@ export class RegistrationComponent implements OnInit {
 		racf: [ '', Validators.compose([ , Validators.required ]) ],
 		title: [ '', Validators.compose([ Validators.minLength(3), Validators.required ]) ],
 		email: [ '', Validators.compose([ Validators.email, Validators.required ]) ],
-		team: [ '' ],
+		team: [ '', Validators.compose([ Validators.required ]) ],
 		acceptedterms: [ false, Validators.required ]
 	});
 	value: Visitor;
